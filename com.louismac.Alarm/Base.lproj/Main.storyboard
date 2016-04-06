@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KLy-MU-joi" userLabel="StopButton">
+                                <rect key="frame" x="40" y="286.5" width="520" height="263"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="btnStopDown:" destination="BYZ-38-t0r" eventType="touchDown" id="aL4-fw-CDY"/>
+                                    <action selector="btnStopUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qXx-ej-2Qz"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alarm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ga1-Pi-ptv">
+                                <rect key="frame" x="40" y="30" width="520" height="20.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="169" id="R8S-hI-Wx3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="R8S-hI-Wx3"/>
+                                    </mask>
+                                </variation>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="7UE-bf-cfa">
+                                <rect key="frame" x="40" y="60.5" width="520" height="216"/>
+                                <date key="date" timeIntervalSinceReferenceDate="478809566.37778598">
+                                    <!--2016-03-04 18:39:26 +0000-->
+                                </date>
+                                <connections>
+                                    <action selector="pickerAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="HxK-oO-LuQ"/>
+                                </connections>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fV1-zd-awy">
+                                <rect key="frame" x="40" y="559.5" width="520" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AhB-EU-vTf" userLabel="Screensaver" customClass="UIButton">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="screenSaverPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dcY-9B-G5Z"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Ga1-Pi-ptv" firstAttribute="centerX" secondItem="7UE-bf-cfa" secondAttribute="centerX" id="68N-BX-yBn"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fV1-zd-awy" secondAttribute="bottom" constant="20" id="Cjz-gU-GTj"/>
+                            <constraint firstItem="7UE-bf-cfa" firstAttribute="top" secondItem="Ga1-Pi-ptv" secondAttribute="bottom" constant="10" id="GtG-IY-U6N"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KLy-MU-joi" secondAttribute="trailing" constant="20" id="Iac-Cy-axd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7UE-bf-cfa" secondAttribute="trailing" constant="20" id="JwE-Si-TCZ"/>
+                            <constraint firstItem="Ga1-Pi-ptv" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="MLr-ED-tMR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fV1-zd-awy" secondAttribute="trailing" constant="20" id="NmJ-AM-Deu"/>
+                            <constraint firstItem="KLy-MU-joi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="ZxV-5H-we9"/>
+                            <constraint firstItem="7UE-bf-cfa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="hzE-x2-TKE"/>
+                            <constraint firstItem="Ga1-Pi-ptv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="kvq-UQ-WFl"/>
+                            <constraint firstItem="fV1-zd-awy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="lrP-WF-SgE"/>
+                            <constraint firstItem="Ga1-Pi-ptv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="mvE-zT-SxW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ga1-Pi-ptv" secondAttribute="trailing" constant="20" id="sQt-QC-pMt"/>
+                            <constraint firstItem="fV1-zd-awy" firstAttribute="top" secondItem="KLy-MU-joi" secondAttribute="bottom" constant="10" id="tdh-uG-5ds"/>
+                            <constraint firstItem="KLy-MU-joi" firstAttribute="top" secondItem="7UE-bf-cfa" secondAttribute="bottom" constant="10" id="uks-pr-PbK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7UE-bf-cfa" secondAttribute="trailing" id="yzg-lv-xtg"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="68N-BX-yBn"/>
+                                <exclude reference="MLr-ED-tMR"/>
+                                <exclude reference="yzg-lv-xtg"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="btnStop" destination="KLy-MU-joi" id="q4i-j1-Bml"/>
+                        <outlet property="lblAlarm" destination="Ga1-Pi-ptv" id="nyB-Oo-liQ"/>
+                        <outlet property="lblCountDown" destination="fV1-zd-awy" id="loT-Wl-gUF"/>
+                        <outlet property="picker" destination="7UE-bf-cfa" id="iRq-3y-zoZ"/>
+                        <outlet property="screenSaverView" destination="AhB-EU-vTf" id="0Rx-Sr-vRI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="340" y="387"/>
+        </scene>
+    </scenes>
+</document>
