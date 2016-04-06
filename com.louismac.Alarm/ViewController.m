@@ -43,7 +43,7 @@ static const NSInteger kScreenSaverTime = 10;
 
     [self resetCountDownTimer];
     [self setLabelFromPicker];
-    [self debugAlarm];
+    //[self debugAlarm];
     [self resetScreenSaverTimer];
     
     NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"doc1" ofType: @"aif"];
@@ -202,7 +202,7 @@ static const NSInteger kScreenSaverTime = 10;
     SystemSoundID soundID;
     
     soundID=1007;
-    //AudioServicesPlaySystemSound(soundID);
+    AudioServicesPlaySystemSound(soundID);
 }
 
 
