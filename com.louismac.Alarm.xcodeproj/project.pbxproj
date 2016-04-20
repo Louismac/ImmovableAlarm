@@ -15,8 +15,7 @@
 		37975A281C8A0D9700687965 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37975A261C8A0D9700687965 /* LaunchScreen.storyboard */; };
 		37975A331C8A0D9700687965 /* com_louismac_AlarmTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37975A321C8A0D9700687965 /* com_louismac_AlarmTests.m */; };
 		37975A3E1C8A0D9700687965 /* com_louismac_AlarmUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 37975A3D1C8A0D9700687965 /* com_louismac_AlarmUITests.m */; };
-		37975A4C1C8A222300687965 /* doc1.aif in Resources */ = {isa = PBXBuildFile; fileRef = 37975A4B1C8A222300687965 /* doc1.aif */; };
-		B0FB25F31CB5CEFC000FE923 /* bluesbigup.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B0FB25F21CB5CEFC000FE923 /* bluesbigup.mp3 */; };
+		B0E05A551CC8270800D8CCF8 /* ateam.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B0E05A541CC8270800D8CCF8 /* ateam.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,8 +52,7 @@
 		37975A391C8A0D9700687965 /* com.louismac.AlarmUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = com.louismac.AlarmUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		37975A3D1C8A0D9700687965 /* com_louismac_AlarmUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = com_louismac_AlarmUITests.m; sourceTree = "<group>"; };
 		37975A3F1C8A0D9700687965 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		37975A4B1C8A222300687965 /* doc1.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = doc1.aif; sourceTree = "<group>"; };
-		B0FB25F21CB5CEFC000FE923 /* bluesbigup.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bluesbigup.mp3; sourceTree = "<group>"; };
+		B0E05A541CC8270800D8CCF8 /* ateam.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ateam.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,8 +111,7 @@
 				37975A241C8A0D9700687965 /* Assets.xcassets */,
 				37975A261C8A0D9700687965 /* LaunchScreen.storyboard */,
 				37975A291C8A0D9700687965 /* Info.plist */,
-				37975A4B1C8A222300687965 /* doc1.aif */,
-				B0FB25F21CB5CEFC000FE923 /* bluesbigup.mp3 */,
+				B0E05A541CC8270800D8CCF8 /* ateam.mp3 */,
 				37975A181C8A0D9700687965 /* Supporting Files */,
 			);
 			path = com.louismac.Alarm;
@@ -250,9 +247,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0E05A551CC8270800D8CCF8 /* ateam.mp3 in Resources */,
 				37975A281C8A0D9700687965 /* LaunchScreen.storyboard in Resources */,
-				37975A4C1C8A222300687965 /* doc1.aif in Resources */,
-				B0FB25F31CB5CEFC000FE923 /* bluesbigup.mp3 in Resources */,
 				37975A251C8A0D9700687965 /* Assets.xcassets in Resources */,
 				37975A231C8A0D9700687965 /* Main.storyboard in Resources */,
 			);

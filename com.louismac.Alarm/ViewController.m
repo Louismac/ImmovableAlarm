@@ -16,6 +16,14 @@ static const NSInteger kHoldDownTime = 120;
 
 static const NSInteger kScreenSaverTime = 10;
 
+static const NSInteger kAlarmInterval = 2;
+
+static const NSInteger kAlarmSound = 1304;
+
+static const BOOL debug = NO;
+
+static const BOOL autoResetFromTomorrow = NO;
+
 @interface ViewController ()
 
 @property(nonatomic, strong) NSDate *alarmTime;
@@ -43,13 +51,15 @@ static const NSInteger kScreenSaverTime = 10;
 
     [self resetCountDownTimer];
     [self setLabelFromPicker];
-    //[self debugAlarm];
+    if(debug) {
+        [self debugAlarm];
+    }
     [self resetScreenSaverTimer];
     
-    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"doc1" ofType: @"aif"];
+    NSString *soundFilePath = [[NSBundle mainBundle] pathForResource:@"ateam" ofType: @"mp3"];
     NSURL *fileURL = [[NSURL alloc] initFileURLWithPath:soundFilePath ];
     self.wakeupPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:fileURL error:nil];
-    self.wakeupPlayer.numberOfLoops = -1; //infinite loop
+    self.wakeupPlayer.numberOfLoops = -1; 
     
 }
 
@@ -92,9 +102,12 @@ static const NSInteger kScreenSaverTime = 10;
 {
     [self resetScreenSaverTimer];
     NSDateComponents *components = [[NSCalendar currentCalendar] components:NSCalendarUnitHour fromDate:[NSDate date]];
-    
-    [self setAlarm:[components hour]>12];
-    
+    if(!debug) {
+        [self setAlarm:[components hour]>12];
+    } else {
+        [self setAlarm:NO];
+    }
+
 }
 
 -(void) setAlarm:(BOOL)forTomorrow
@@ -104,6 +117,7 @@ static const NSInteger kScreenSaverTime = 10;
     } else {
         self.alarmTime = self.picker.date;
     }
+    NSLog(@"setting alarm");
     
     [self setLabelFromPicker];
     
@@ -163,7 +177,9 @@ static const NSInteger kScreenSaverTime = 10;
         } else {
             NSLog(@"alarm released");
             self.isHaltingAlarm = NO;
-            [self setAlarm:YES];
+            if(autoResetFromTomorrow) {
+                [self setAlarm:YES];
+            }
             [self.countDownTimer invalidate];
             self.countDownTimer = nil;
             [self resetCountDownTimer];
@@ -185,7 +201,9 @@ static const NSInteger kScreenSaverTime = 10;
 
 -(void) startAlarmSound
 {
-    self.alarmPlayerTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(triggerAlarmSound) userInfo:nil repeats:YES];
+    [self.alarmPlayerTimer invalidate];
+    self.alarmPlayerTimer = nil;
+    self.alarmPlayerTimer = [NSTimer scheduledTimerWithTimeInterval:kAlarmInterval target:self selector:@selector(triggerAlarmSound) userInfo:nil repeats:YES];
 }
 
 -(void) endAlarmSound
@@ -201,7 +219,7 @@ static const NSInteger kScreenSaverTime = 10;
 {
     SystemSoundID soundID;
     
-    soundID=1007;
+    soundID=kAlarmSound;
     AudioServicesPlaySystemSound(soundID);
 }
 
